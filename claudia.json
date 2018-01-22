@@ -1,0 +1,7 @@
+{
+  "lambda": {
+    "role": "burocraziafacilefeedrss-executor",
+    "name": "burocraziafacilefeedrss",
+    "region": "us-east-1"
+  }
+}

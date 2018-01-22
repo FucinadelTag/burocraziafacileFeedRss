@@ -1,7 +1,11 @@
 {
   "lambda": {
-    "role": "burocraziafacilefeedrss-executor",
-    "name": "burocraziafacilefeedrss",
+    "role": "burocraziafacilerss-executor",
+    "name": "burocraziafacilerss",
     "region": "us-east-1"
+  },
+  "api": {
+    "id": "mxbfqtuan8",
+    "module": "app"
   }
 }

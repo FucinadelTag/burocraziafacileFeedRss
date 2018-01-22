@@ -1,5 +1,5 @@
 {
-  "name": "burocraziafacilefeedrss",
+  "name": "burocraziafacilerss",
   "version": "1.0.0",
   "description": "Crea Feed Rss per burocraziafacile.it",
   "main": "index.js",
@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "claudia-api-builder": "^3.0.1",
     "prismic-javascript": "^1.5.0-beta.1"
   }
 }

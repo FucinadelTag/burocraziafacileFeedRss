@@ -5,30 +5,11 @@ const PrismicDom  = require('prismic-dom');
 
 var apiEndpoint = 'http://burocraziafacile.prismic.io/api/v2';
 
-var feed = new Feed({
-  title: 'BurocraziaFacile.it - Guide Gratuite alle Tue Pratiche',
-  description: 'Risparmia Tempo con Burocrazia Facile: Trova Subito le Soluzioni alle Tue Pratiche e Ricevi Online i Documenti che ti Servono!',
-  id: 'https://www.burocraziafacile.it/',
-  link: 'https://www.burocraziafacile.it/',
-  image: 'https://prismic-io.s3.amazonaws.com/burocraziafacile/6ee37555903fbb556179937998dc274d1c730b61_unnamed.png',
-  favicon: 'https://www.burocraziafacile.it/favicon.ico',
-  copyright: 'All rights reserved 2018, Script Media Group LTD',
-  generator: 'SMG', // optional, default = 'Feed for Node.js'
-  feedLinks: {
-    json: 'https://example.com/json',
-    atom: 'https://example.com/atom',
-  },
-  author: {
-    name: 'BurocraziaFacile.it',
-    email: 'info@fucinadeltag.it',
-    link: 'https://www.burocraziafacile.it/'
-  }
-})
 
 var linkArticolo = function (articolo) {
     let categoria = articolo.data.categoria.uid;
 
-    let path = categoria + "/" + articolo.uid;
+    let path = categoria + "/" + articolo.uid + '?utm_source=feedReader&utm_medium=feed';
 
     let url = "https://www.burocraziafacile.it/" + path;
 
@@ -56,6 +37,25 @@ api.get('/rss', function (request) {
     )
     .then (
         function(results) {
+            const feed = new Feed({
+                title: 'BurocraziaFacile.it - Guide Gratuite alle Tue Pratiche',
+                description: 'Risparmia Tempo con Burocrazia Facile: Trova Subito le Soluzioni alle Tue Pratiche e Ricevi Online i Documenti che ti Servono!',
+                id: 'https://www.burocraziafacile.it/',
+                link: 'https://www.burocraziafacile.it/',
+                image: 'https://prismic-io.s3.amazonaws.com/burocraziafacile/6ee37555903fbb556179937998dc274d1c730b61_unnamed.png',
+                favicon: 'https://www.burocraziafacile.it/favicon.ico',
+                copyright: 'All rights reserved 2018, Script Media Group LTD',
+                generator: 'SMG', // optional, default = 'Feed for Node.js'
+                feedLinks: {
+                    json: 'https://example.com/json',
+                    atom: 'https://example.com/atom',
+                },
+                author: {
+                    name: 'BurocraziaFacile.it',
+                    email: 'info@fucinadeltag.it',
+                    link: 'https://www.burocraziafacile.it/'
+                }
+            })
 
             results.results.forEach(articolo => {
                 feed.addItem({

@@ -28,8 +28,7 @@ api.get('/rss', function (request) {
         function (api) {
             return api.query(
                 [
-                    Prismic.Predicates.at('document.type', 'articolo'),
-                    Prismic.Predicates.at('my.articolo.tipo', 'articolo')
+                    Prismic.Predicates.at('document.type', 'articolo')
                 ],
                 { pageSize : 20, page : 1, orderings : '[document.first_publication_date desc]', fetchLinks: 'categoria.uid' }
             );
